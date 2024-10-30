@@ -4,7 +4,7 @@ from datetime import datetime
 from tkinter import font
 from time import sleep
 
-# Tkinter Logic #
+# Lógica do Tkinter #
 class FakeTerminal:
     def __init__(self, title, font) -> None:
         self.title = title
@@ -21,7 +21,7 @@ class FakeTerminal:
         self.text_area = tk.Text(self.frame, font=self.font, bg='black', fg='#8fe25c', wrap='word', height=30)
         self.text_area.pack()
 
-        self.text_area.insert(tk.END, f"This is the terminal for {self.title}.\n")
+        self.text_area.insert(tk.END, f"Este é o terminal para {self.title}.\n")
         self.text_area.config(state=tk.DISABLED)
 
     def update_text(self, new_text):
@@ -33,7 +33,7 @@ class FakeTerminal:
 
         win.after(0, update)
 
-# Creating the main window
+# Criando a janela principal
 win = tk.Tk()
 win.configure(background='#292929')
 win.title("")
@@ -48,13 +48,13 @@ fake_term_1 = FakeTerminal(title="", font=fira_code)
 fake_term_1.frame.grid(row=1, column=1, padx=10, pady=1)
 fake_term_1.update_text("...")
 
-## Placeholder values
+## Valores de espaço reservado
 
-a = "Hello world"
+a = "Olá mundo"
 
-# Background update loop 
-# Used for dynamic updating the 
-# content of each fake terminal
+# Loop de atualização em segundo plano 
+# Usado para atualizar dinamicamente o 
+# conteúdo do terminal "fake"
 def loop_2():
     while True:
         fake_term_1.update_text(str(a))
